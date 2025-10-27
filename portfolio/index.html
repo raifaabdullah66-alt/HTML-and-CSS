@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raifa Abdullah | Portfolio</title>
+
+<style>
+/* General Styling */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff0f5;
+  color: #4a4a4a;
+overflow-x:hidden;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ff8fab;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 1rem;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar a:hover {
+  color: #ffe5ec;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 90vh;
+  text-align: center;
+  color: white;
+}
+#bg-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateX(-50%);
+
+}
+.hero-text {
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 182, 193, 0.4);
+  padding: 2rem;
+  border-radius: 15px;
+}
+.hero-text h1 span {
+  color: #ffe5ec;
+}
+
+/* Centered Image */
+.image-section {
+  text-align: center;
+  padding: 4rem 0;
+}
+.image-section img {
+  width: 50%;
+  border-radius: 25px;
+  filter: brightness(0.9) saturate(1.2);
+  transition: 0.3s;
+}
+.image-section img:hover {
+  filter: brightness(1.1) saturate(1.4);
+}
+
+/* Table Styling */
+.table-section {
+  text-align: center;
+  padding: 3rem;
+}
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 70%;
+}
+th, td {
+  border: 2px solid #ffb6c1;
+  padding: 15px;
+}
+th {
+  background-color: #ffc0cb;
+}
+
+/* Two Column Layout */
+.two-column {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin: 4rem 0;
+}
+.column {
+  width: 45%;
+  padding: 2rem;
+  background-color: #ffe5ec;
+  color: #7a4a61;
+  border-radius: 10px;
+  margin: 0 1rem;
+}
+
+/* Text Over Image */
+.text-over-image {
+  position: relative;
+  text-align: center;
+}
+.text-over-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 182, 193, 0.6);
+  color: white;
+  font-size: 2rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+/* Image Overlay Fade */
+.container {
+  position: relative;
+  width: 80%;
+  margin: 3rem auto;
+}
+.fade-image {
+  width: 100%;
+  border-radius: 15px;
+  transition: 0.5s ease;
+}
+.overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 192, 203, 0.8);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+.container:hover .overlay {
+  opacity: 1;
+}
+.container:hover .fade-image {
+  filter: brightness(0.7);
+}
+
+/* Video with Text Overlay */
+.video-overlay {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+.overlay-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: rgba(255, 105, 180, 0.4);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+/* Paragraph Hover Effect */
+.hover-paragraph {
+  text-align: center;
+  padding: 3rem;
+}
+.hover-paragraph p {
+  display: inline-block;
+  background-color: #ffe5ec;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+.hover-paragraph p:hover {
+  background-color: #ffb6c1;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: #ff8fab;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+</style>
+
+</head>
+<body>
+
+  <!-- Fixed Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section with Autoplay Video -->
+  <section id="home" class="hero">
+    <video autoplay muted loop id="bg-video">
+      <source src="https://cdn.pixabay.com/video/2025/09/15/304330_tiny.mp4" type="video/mp4">
+    </video>
+    <div class="hero-text">
+      <h1>🌷 Hi, I’m <span>Raifa Abdullah</span></h1>
+      <p>Newbie Dev</p>
+    </div>
+  </section>
+
+  <!-- Centered Image with Filter and Rounded Edges -->
+  <section class="image-section">
+    <h2>My Favorite Aesthetic</h2>
+    <img src="https://images.pexels.com/photos/932261/pexels-photo-932261.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Raifa's Aesthetic">
+  </section>
+
+  <!-- Table Section -->
+  <section id="about" class="table-section">
+    <h2>My Skills</h2>
+    <table>
+      <tr>
+        <th>Skill</th>
+        <th>Experience Level</th>
+      </tr>
+      <tr>
+        <td>HTML & CSS</td>
+        <td>Advanced</td>
+      </tr>
+      <tr>
+        <td>JavaScript</td>
+        <td>Intermediate</td>
+      </tr>
+      <tr>
+        <td>Graphic Design</td>
+        <td>Intermediate</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Two Column Layout -->
+  <section class="two-column">
+    <div class="column left">
+      <h2>My Journey</h2>
+      <p>I started learning web design because I wanted to bring my ideas to life online. I love colorful, clean, and meaningful designs that tell a story.</p>
+    </div>
+    <div class="column right">
+      <h2>My Vision</h2>
+      <p>To create digital experiences that are as beautiful and kind as the people who use them. 💕</p>
+    </div>
+  </section>
+
+  <!-- Text Over Image -->
+  <section id="projects" class="text-over-image">
+    <img src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Inspiration">
+    <div class="overlay-text">Follow Your Dreams ✨</div>
+  </section>
+
+  <!-- Image Overlay Fade -->
+  <section class="overlay-fade">
+    <div class="container">
+      <img src="https://images.pexels.com/photos/1767434/pexels-photo-1767434.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Overlay Image" class="fade-image">
+      <div class="overlay">Raifa’s Creative World 🌈</div>
+    </div>
+  </section>
+
+  <!-- Video with Text Overlay -->
+  <section class="video-overlay">
+    <video autoplay muted loop class="overlay-video">
+      <source src="https://cdn.pixabay.com/video/2025/09/15/304330_tiny.mp4" type="video/mp4">
+    </video>
+    <div class="video-text">
+      <h2>Video.</h2>
+    </div>
+  </section>
+
+  <!-- Paragraph with Hover Effect -->
+  <section class="hover-paragraph">
+    <p>Hover over this text to see some magic happen! 🌟</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Raifa Abdullah | Designed with 💖</p>
+  </footer>
+
+</body>
+</html>
